@@ -1,6 +1,6 @@
 resource "aws_route53_zone" "zone" {
   count = "${var.count}"
-  name = "admin.odania-it.com"
+  name = "${var.domain}"
 }
 
 resource "aws_acm_certificate" "certificate" {
