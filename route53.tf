@@ -11,7 +11,7 @@ resource "aws_acm_certificate" "certificate" {
     "*.${var.domain}"
   ]
 
-  provider = "${var.certificate-provider}"
+  provider = "aws.us-east"
 }
 
 resource "aws_route53_record" "validation" {
@@ -32,7 +32,7 @@ resource "aws_acm_certificate_validation" "validation" {
     "${aws_route53_record.validation.fqdn}"
   ]
 
-  provider = "${var.certificate-provider}"
+  provider = "aws.us-east"
   depends_on = [
     "aws_route53_record.validation",
     "aws_acm_certificate.certificate"
