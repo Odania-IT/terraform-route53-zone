@@ -1,7 +1,3 @@
-variable "count" {
-  type = "string"
-}
-
 variable "domain" {
   type = "string"
 }
